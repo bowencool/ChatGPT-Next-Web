@@ -15,6 +15,9 @@ const nextConfig = {
   images: {
     unoptimized: mode === "export",
   },
+  env: {
+    BASE_URL: process.env.BASE_URL,
+  },
 };
 
 if (mode !== "export") {
