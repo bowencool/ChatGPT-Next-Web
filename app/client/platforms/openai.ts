@@ -11,6 +11,7 @@ import Locale from "../../locales";
 import {
   EventStreamContentType,
   fetchEventSource,
+  FetchEventSourceInit,
 } from "@fortaine/fetch-event-source";
 import { prettyObject } from "@/app/utils/format";
 import { getClientConfig } from "@/app/config/client";
@@ -80,11 +81,13 @@ export class ChatGPTApi implements LLMApi {
 
     try {
       const chatPath = this.path(OpenaiPath.ChatPath);
-      const chatPayload = {
+      const chatPayload: FetchEventSourceInit = {
         method: "POST",
         body: JSON.stringify(requestPayload),
         signal: controller.signal,
         headers: getHeaders(),
+        credentials: "include",
+        mode: "cors",
       };
 
       // make a fetch request

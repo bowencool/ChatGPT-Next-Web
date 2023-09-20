@@ -33,6 +33,9 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: true,
   },
+  env: {
+    BASE_URL: process.env.BASE_URL,
+  },
 };
 
 const CorsHeaders = [
