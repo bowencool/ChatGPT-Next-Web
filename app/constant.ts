@@ -78,6 +78,10 @@ export const SUMMARIZE_MODEL = "gpt-3.5-turbo";
 
 export const DEFAULT_MODELS = [
   {
+    name: "gpt-3.5-turbo-1106",
+    available: true,
+  },
+  {
     name: "gpt-3.5-turbo",
     available: true,
   },
